@@ -951,7 +951,7 @@ export default function Game() {
         </div>
 
         <footer className="dot404__footer">
-          <span>JAKUBSZCZESNIAK.PL</span>
+          <span>JAKUB SZCZĘŚNIAK</span>
           <span>2026</span>
         </footer>
       </main>
