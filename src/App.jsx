@@ -131,9 +131,9 @@ const navItems = [
   ["03", "projects", "Projekty"],
 
 
-  ["05", "cv", "CV"],
+  ["04", "cv", "CV"],
 
-  ["06", "contact", "Kontakt"],
+  ["05", "contact", "Kontakt"],
 
 ];
 
@@ -1712,7 +1712,7 @@ export default function App() {
 
           <Reveal className="section-shell cv-shell" reducedMotion={reducedMotion}>
 
-            <span className="micro-label">05 / CURRICULUM VITAE</span>
+            <span className="micro-label">04 / CURRICULUM VITAE</span>
 
             <FontAwesomeIcon className="cv-watermark" icon={RegularIcons.faFile} />
 
@@ -1732,7 +1732,7 @@ export default function App() {
 
           <Reveal className="section-shell" reducedMotion={reducedMotion}>
 
-            <span className="micro-label">06 / KONTAKT</span>
+            <span className="micro-label">05 / KONTAKT</span>
 
             <div className="contact-head">
 
