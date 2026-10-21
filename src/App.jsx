@@ -20,11 +20,15 @@ const PRICES = {
 
 };
 
+
+
 const formatPrice = (value) => new Intl.NumberFormat("pl-PL").format(value);
 
 const GA_MEASUREMENT_ID = "G-F55QNQC2WF";
 
 const COOKIE_CONSENT_KEY = "js_cookie_consent_v1";
+
+
 
 function loadGoogleAnalytics() {
 
@@ -38,6 +42,8 @@ function loadGoogleAnalytics() {
 
   window.gtag("config", GA_MEASUREMENT_ID);
 
+
+
   const script = document.createElement("script");
 
   script.id = "ga4-script";
@@ -49,6 +55,8 @@ function loadGoogleAnalytics() {
   document.head.appendChild(script);
 
 }
+
+
 
 function CookieBanner({ onAccept, onReject, onSettings, onPrivacy }) {
 
@@ -82,6 +90,8 @@ function CookieBanner({ onAccept, onReject, onSettings, onPrivacy }) {
 
 }
 
+
+
 function CookieSettings({ analytics, setAnalytics, onSave, onReject, onClose }) {
 
   return (
@@ -106,6 +116,12 @@ function CookieSettings({ analytics, setAnalytics, onSave, onReject, onClose }) 
 
 }
 
+
+
+
+
+
+
 const navItems = [
 
   ["01", "about", "O mnie"],
@@ -114,13 +130,14 @@ const navItems = [
 
   ["03", "projects", "Projekty"],
 
-  ["04", "freelance", "Freelance"],
 
   ["05", "cv", "CV"],
 
   ["06", "contact", "Kontakt"],
 
 ];
+
+
 
 const projectsData = {
 
@@ -264,7 +281,11 @@ const projectsData = {
 
   },
 
+
+
 };
+
+
 
 function Reveal({ children, className = "", reducedMotion }) {
 
@@ -292,6 +313,8 @@ function Reveal({ children, className = "", reducedMotion }) {
 
 }
 
+
+
 function SectionTitle({ number, eyebrow, children }) {
 
   return (
@@ -314,6 +337,8 @@ function SectionTitle({ number, eyebrow, children }) {
 
 }
 
+
+
 function Hero({ reducedMotion, scrollTo }) {
 
   const ref = useRef(null);
@@ -326,23 +351,25 @@ function Hero({ reducedMotion, scrollTo }) {
 
   const scale = useTransform(scrollYProgress, [0, 1], [1, 0.93]);
 
+
+
   return (
 
     <section id="header" className="hero" ref={ref}>
 
       <div className="hero-code hero-code-a" aria-hidden="true">
 
-        <span>const developer = {</span><span>  name: "Jakub",</span>
+        <span>const developer = &#123;</span><span>&nbsp;&nbsp;name: "Jakub",</span>
 
-        <span>  focus: ["web", "AI"],</span><span>  available: true</span><span>};</span>
+        <span>&nbsp;&nbsp;focus: ["web", "AI"],</span><span>&nbsp;&nbsp;available: true</span><span>&#125;;</span>
 
       </div>
 
       <div className="hero-code hero-code-b" aria-hidden="true">
 
-        <span>.portfolio {</span><span>  display: grid;</span>
+        <span>.portfolio &#123;</span><span>&nbsp;&nbsp;display: grid;</span>
 
-        <span>  min-height: 100vh;</span><span>  color: #fff;</span><span>}</span>
+        <span>&nbsp;&nbsp;min-height: 100vh;</span><span>&nbsp;&nbsp;color: #fff;</span><span>&#125;</span>
 
       </div>
 
@@ -374,11 +401,15 @@ function Hero({ reducedMotion, scrollTo }) {
 
 }
 
+
+
 function ProjectModal({ project, onClose, reducedMotion }) {
 
   const [selectedImage, setSelectedImage] = useState(null);
 
   const groups = project.imageGroups || [];
+
+
 
   useEffect(() => {
 
@@ -393,6 +424,8 @@ function ProjectModal({ project, onClose, reducedMotion }) {
     return () => window.removeEventListener("keydown", key);
 
   }, [selectedImage, onClose]);
+
+
 
   return (
 
@@ -554,6 +587,8 @@ function ProjectModal({ project, onClose, reducedMotion }) {
 
 }
 
+
+
 function PrivacyModal({ onClose, reducedMotion }) {
 
   useEffect(() => {
@@ -565,6 +600,8 @@ function PrivacyModal({ onClose, reducedMotion }) {
     return () => window.removeEventListener("keydown", handleKey);
 
   }, [onClose]);
+
+
 
   return (
 
@@ -608,17 +645,31 @@ function PrivacyModal({ onClose, reducedMotion }) {
 
           <p className="privacy-updated">Ostatnia aktualizacja: 21.09.2026</p>
 
+
+
           <section><h3>1. Administrator</h3><p>Administratorem danych związanych z korzystaniem z tej strony jest Jakub Szczęśniak. W sprawach dotyczących prywatności możesz skontaktować się pod adresem <a href="mailto:jakub3szczesniak@gmail.com">jakub3szczesniak@gmail.com</a>.</p></section>
+
+
 
           <section><h3>2. Dane techniczne i logi serwera</h3><p>Podczas korzystania ze strony serwer hostingowy może automatycznie zapisywać dane techniczne, takie jak adres IP, data i czas żądania, adres odwiedzanego zasobu, informacje o przeglądarce, systemie operacyjnym oraz źródle wejścia. Dane te mogą być wykorzystywane do zapewnienia bezpieczeństwa i prawidłowego działania strony oraz do tworzenia zbiorczych statystyk odwiedzin.</p></section>
 
+
+
           <section><h3>3. Pliki cookies i Google Analytics 4</h3><p>Strona korzysta z Google Analytics 4 (Google LLC) wyłącznie po wyrażeniu zgody na cookies analityczne. Narzędzie służy do tworzenia statystyk odwiedzin i analizy sposobu korzystania z portfolio. Zgoda jest dobrowolna i może zostać w każdej chwili zmieniona przez przycisk „USTAWIENIA COOKIES” w stopce. Brak zgody nie ogranicza podstawowego działania strony.</p></section>
+
+
 
           <section><h3>4. Formularz kontaktowy</h3><p>Formularz dostępny na stronie przygotowuje wiadomość w domyślnym programie pocztowym użytkownika za pomocą odnośnika <code>mailto:</code>. Dane wpisane w formularzu nie są wysyłane do osobnej bazy danych przez tę stronę. Po wysłaniu wiadomości e-mail dane są przetwarzane w celu udzielenia odpowiedzi, prowadzenia korespondencji oraz — gdy wiadomość dotyczy współpracy — podjęcia działań przed zawarciem umowy.</p></section>
 
+
+
           <section><h3>5. Usługi i odnośniki zewnętrzne</h3><p>Strona korzysta z czcionek Google Fonts pobieranych z serwerów Google. Zawiera również odnośniki do zewnętrznych serwisów, np. GitHub. Po przejściu do zewnętrznego serwisu obowiązują zasady prywatności jego operatora.</p></section>
 
+
+
           <section><h3>6. Okres przechowywania i prawa</h3><p>Dane techniczne są przechowywane zgodnie z ustawieniami i okresem retencji dostawcy hostingu. Korespondencja jest przechowywana tak długo, jak jest to potrzebne do obsługi kontaktu, współpracy lub zabezpieczenia ewentualnych roszczeń. W zakresie przewidzianym przez RODO możesz żądać dostępu do swoich danych, ich sprostowania, usunięcia, ograniczenia przetwarzania lub wnieść sprzeciw. Masz również prawo złożyć skargę do Prezesa Urzędu Ochrony Danych Osobowych.</p></section>
+
+
 
           <section><h3>7. Zmiany polityki</h3><p>Polityka może zostać zaktualizowana, jeżeli zmienią się funkcje strony, wykorzystywane usługi lub wymagania prawne. Aktualna wersja jest publikowana bezpośrednio na tej stronie.</p></section>
 
@@ -632,15 +683,25 @@ function PrivacyModal({ onClose, reducedMotion }) {
 
 }
 
+
+
 export default function App() {
 
+
+
   const path = window.location.pathname;
+
+
 
   if (path === "/gra" || path === "/gra/") {
 
     return <Game />;
 
   }
+
+
+
+
 
   const [menuOpen, setMenuOpen] = useState(false);
 
@@ -668,6 +729,8 @@ export default function App() {
 
   const [contactActive, setContactActive] = useState(false);
 
+
+
   useEffect(() => {
 
     const mq = window.matchMedia("(prefers-reduced-motion: reduce)");
@@ -680,11 +743,15 @@ export default function App() {
 
   }, []);
 
+
+
   useEffect(() => {
 
     if (cookieConsent === "accepted") loadGoogleAnalytics();
 
   }, [cookieConsent]);
+
+
 
   const saveCookieConsent = (accepted) => {
 
@@ -702,6 +769,8 @@ export default function App() {
 
   };
 
+
+
   useEffect(() => {
 
     document.body.style.overflow = menuOpen || selectedProject || pricingDetails || privacyOpen || cookieSettingsOpen ? "hidden" : "";
@@ -709,6 +778,8 @@ export default function App() {
     return () => { document.body.style.overflow = ""; };
 
   }, [menuOpen, selectedProject, pricingDetails, privacyOpen, cookieSettingsOpen]);
+
+
 
   useEffect(() => {
 
@@ -718,7 +789,9 @@ export default function App() {
 
     );
 
-    const sectionIds = ["header", "about", "experience", "projects", "freelance", "cv", "contact"];
+    const sectionIds = ["header", "about", "experience", "projects", "cv", "contact"];
+
+
 
     let locked = false;
 
@@ -728,6 +801,8 @@ export default function App() {
 
     let unlockTimer;
 
+
+
     const closestSection = () => {
 
       const viewportCenter = window.scrollY + window.innerHeight / 2;
@@ -736,17 +811,23 @@ export default function App() {
 
       let distance = Infinity;
 
+
+
       sectionIds.forEach((id, i) => {
 
         const el = document.getElementById(id);
 
         if (!el) return;
 
+
+
         const top = window.scrollY + el.getBoundingClientRect().top;
 
         const center = top + el.offsetHeight / 2;
 
         const nextDistance = Math.abs(viewportCenter - center);
+
+
 
         if (nextDistance < distance) {
 
@@ -758,9 +839,13 @@ export default function App() {
 
       });
 
+
+
       return index;
 
     };
+
+
 
     const onWheel = (event) => {
 
@@ -768,11 +853,17 @@ export default function App() {
 
       if (event.ctrlKey || event.target.closest(".modal-content, .lightbox-overlay")) return;
 
+
+
       event.preventDefault();
 
       if (locked) return;
 
+
+
       wheelSum += event.deltaY;
+
+
 
       clearTimeout(resetTimer);
 
@@ -784,9 +875,13 @@ export default function App() {
 
       if (Math.abs(wheelSum) < 55) return;
 
+
+
       const current = closestSection();
 
       const direction = wheelSum > 0 ? 1 : -1;
+
+
 
       if (current === sectionIds.length - 1 && direction > 0) {
 
@@ -798,6 +893,8 @@ export default function App() {
 
       }
 
+
+
       if (footerOpen && direction < 0) {
 
         wheelSum = 0;
@@ -808,19 +905,29 @@ export default function App() {
 
       }
 
+
+
       const next = Math.max(0, Math.min(sectionIds.length - 1, current + direction));
+
+
 
       wheelSum = 0;
 
       if (next === current) return;
 
+
+
       const target = document.getElementById(sectionIds[next]);
 
       if (!target) return;
 
+
+
       locked = true;
 
       target.scrollIntoView({ behavior: "smooth", block: "start" });
+
+
 
       clearTimeout(unlockTimer);
 
@@ -832,7 +939,11 @@ export default function App() {
 
     };
 
+
+
     window.addEventListener("wheel", onWheel, { passive: false });
+
+
 
     return () => {
 
@@ -846,9 +957,13 @@ export default function App() {
 
   }, [menuOpen, selectedProject, pricingDetails, privacyOpen, reducedMotion, footerOpen]);
 
+
+
   useEffect(() => {
 
     if (!footerOpen || privacyOpen || cookieSettingsOpen) return;
+
+
 
     const closeOnOutsideClick = (event) => {
 
@@ -860,15 +975,21 @@ export default function App() {
 
     };
 
+
+
     document.addEventListener("pointerdown", closeOnOutsideClick);
 
     return () => document.removeEventListener("pointerdown", closeOnOutsideClick);
 
   }, [footerOpen, privacyOpen, cookieSettingsOpen]);
 
+
+
   useEffect(() => {
 
     const drawerViewport = window.matchMedia("(min-width: 768px)");
+
+
 
     const syncContactState = () => {
 
@@ -882,9 +1003,13 @@ export default function App() {
 
       }
 
+
+
       const contact = document.getElementById("contact");
 
       if (!contact) return;
+
+
 
       const rect = contact.getBoundingClientRect();
 
@@ -895,6 +1020,8 @@ export default function App() {
       const tablet = window.innerWidth >= 768 && window.innerWidth < 1024;
 
       const nearBottom = window.innerHeight + window.scrollY >= document.documentElement.scrollHeight - 8;
+
+
 
       setContactActive(active);
 
@@ -910,6 +1037,8 @@ export default function App() {
 
     };
 
+
+
     syncContactState();
 
     window.addEventListener("scroll", syncContactState, { passive: true });
@@ -917,6 +1046,8 @@ export default function App() {
     window.addEventListener("resize", syncContactState);
 
     drawerViewport.addEventListener?.("change", syncContactState);
+
+
 
     return () => {
 
@@ -930,6 +1061,8 @@ export default function App() {
 
   }, [privacyOpen, cookieSettingsOpen]);
 
+
+
   const scrollTo = (id) => {
 
     setMenuOpen(false);
@@ -938,11 +1071,15 @@ export default function App() {
 
   };
 
+
+
   const validateContact = () => {
 
     const errors = { name: "", email: "", message: "" };
 
     const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+
 
     if (!formData.name.trim()) {
 
@@ -954,6 +1091,8 @@ export default function App() {
 
     }
 
+
+
     if (!formData.email.trim()) {
 
       errors.email = "Wpisz adres e-mail.";
@@ -963,6 +1102,8 @@ export default function App() {
       errors.email = "Podaj poprawny adres e-mail, np. nazwa@domena.pl.";
 
     }
+
+
 
     if (!formData.message.trim()) {
 
@@ -974,11 +1115,15 @@ export default function App() {
 
     }
 
+
+
     setFormErrors(errors);
 
     return !Object.values(errors).some(Boolean);
 
   };
+
+
 
   const updateField = (field, value) => {
 
@@ -992,11 +1137,15 @@ export default function App() {
 
   };
 
+
+
   const sendMail = (e) => {
 
     e.preventDefault();
 
     if (!validateContact()) return;
+
+
 
     const subject = encodeURIComponent(`Kontakt z portfolio - ${formData.name}`);
 
@@ -1006,15 +1155,21 @@ export default function App() {
 
     );
 
+
+
     window.location.href =
 
       `mailto:jakub3szczesniak@gmail.com?subject=${subject}&body=${body}`;
+
+
 
     setSent(true);
 
     setTimeout(() => setSent(false), 3000);
 
   };
+
+
 
   return (
 
@@ -1058,6 +1213,8 @@ export default function App() {
 
       </nav>
 
+
+
       <AnimatePresence>
 
         {menuOpen && (
@@ -1094,7 +1251,11 @@ export default function App() {
 
       </AnimatePresence>
 
+
+
       <Hero reducedMotion={reducedMotion} scrollTo={scrollTo} />
+
+
 
       <main>
 
@@ -1116,21 +1277,21 @@ export default function App() {
 
                 <span className="micro-label">KIM JESTEM /</span>
 
-                <p>Rozwijam się jako Junior Developer, tworząc aplikacje webowe i desktopowe z 
+                <p>Rozwijam się jako Junior Developer, tworząc aplikacje webowe i desktopowe z&#x20;
 
-                  wykorzystaniem nowoczesnych technologii oraz rozwiązań opartych na AI. 
+                  wykorzystaniem nowoczesnych technologii oraz rozwiązań opartych na AI.&#x20;
 
-                  Skupiam się przede wszystkim na frontendzie, e-commerce i analizie danych, a 
+                  Skupiam się przede wszystkim na frontendzie, e-commerce i analizie danych, a&#x20;
 
-                  szczególnie interesuje mnie łączenie tych obszarów z programowaniem i 
+                  szczególnie interesuje mnie łączenie tych obszarów z programowaniem i&#x20;
 
                   sztuczną inteligencją.
 
                   <br/><br/>
 
-                  Szukam możliwości zdobywania doświadczenia komercyjnego i dalszego rozwoju w IT. 
+                  Szukam możliwości zdobywania doświadczenia komercyjnego i dalszego rozwoju w IT.&#x20;
 
-                  Równolegle realizuję pierwsze zlecenia freelance, tworząc strony internetowe i sklepy dla 
+                  Równolegle realizuję pierwsze zlecenia freelance, tworząc strony internetowe i sklepy dla&#x20;
 
                   firm oraz klientów indywidualnych.</p>
 
@@ -1145,6 +1306,8 @@ export default function App() {
           </Reveal>
 
         </section>
+
+
 
         <section id="experience" className="section experience-section">
 
@@ -1184,6 +1347,8 @@ export default function App() {
 
         </section>
 
+
+
         <section id="projects" className="section projects-section">
 
           <Reveal className="section-shell" reducedMotion={reducedMotion}>
@@ -1218,6 +1383,8 @@ export default function App() {
 
         </section>
 
+
+
       {false && (
 
         <section id="freelance" className="section freelance-section">
@@ -1225,6 +1392,8 @@ export default function App() {
           <Reveal className="section-shell" reducedMotion={reducedMotion}>
 
             <SectionTitle number="04" eyebrow="FREELANCE">WSPÓŁPRACA</SectionTitle>
+
+
 
             <div className="freelance-intro">
 
@@ -1239,6 +1408,8 @@ export default function App() {
               </p>
 
             </div>
+
+
 
             <div className="pricing-grid pricing-grid-compact">
 
@@ -1272,6 +1443,8 @@ export default function App() {
 
               </article>
 
+
+
               <article className="pricing-card">
 
                 <div className="pricing-card-heading"><span>02 / E-COMMERCE</span><b>od {formatPrice(PRICES.ecommerce.basic)} zł</b></div>
@@ -1304,6 +1477,8 @@ export default function App() {
 
             </div>
 
+
+
             <div className="pricing-footer pricing-footer-compact">
 
               <div><span>INDYWIDUALNA WYCENA /</span><p>Ceny są startowe. Domena, hosting, płatne licencje i niestandardowe integracje rozliczane są osobno.</p></div>
@@ -1311,6 +1486,8 @@ export default function App() {
               <button type="button" onClick={() => scrollTo("contact")}>OMÓW PROJEKT <FontAwesomeIcon icon={SolidIcons.faArrowRight} /></button>
 
             </div>
+
+
 
             <AnimatePresence>
 
@@ -1352,6 +1529,8 @@ export default function App() {
 
                     },
 
+
+
                     "web-pro": {
 
                       no: "01 / WWW / PRO",
@@ -1391,6 +1570,8 @@ export default function App() {
                       ]
 
                     },
+
+
 
                     "shop-basic": {
 
@@ -1439,6 +1620,8 @@ export default function App() {
                       ]
 
                     },
+
+
 
                     "shop-pro": {
 
@@ -1523,6 +1706,8 @@ export default function App() {
         </section>
         )}
 
+
+
         <section id="cv" className="section cv-section">
 
           <Reveal className="section-shell cv-shell" reducedMotion={reducedMotion}>
@@ -1540,6 +1725,8 @@ export default function App() {
           </Reveal>
 
         </section>
+
+
 
         <section id="contact" className="section contact-section">
 
@@ -1665,7 +1852,10 @@ export default function App() {
 
         </section>
 
+
       </main>
+
+
 
       <div className={`footer-drawer ${contactActive ? "is-visible" : ""} ${footerOpen ? "is-open" : ""}`}>
 
@@ -1687,6 +1877,8 @@ export default function App() {
 
         </button>
 
+
+
         <footer id="footer" className="footer">
 
           <span>© 2026 JAKUB SZCZĘŚNIAK</span>
@@ -1705,11 +1897,15 @@ export default function App() {
 
       </div>
 
+
+
       <AnimatePresence>
 
         {privacyOpen && <PrivacyModal onClose={() => setPrivacyOpen(false)} reducedMotion={reducedMotion} />}
 
       </AnimatePresence>
+
+
 
       {!cookieConsent && (
 
@@ -1726,6 +1922,8 @@ export default function App() {
         />
 
       )}
+
+
 
       {cookieSettingsOpen && (
 
@@ -1744,6 +1942,8 @@ export default function App() {
         />
 
       )}
+
+
 
       <AnimatePresence>
 
