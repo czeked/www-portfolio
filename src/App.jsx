@@ -1720,7 +1720,7 @@ export default function App() {
 
             <p>Pełne CV — edukacja, kwalifikacje, doświadczenie i technologie.</p>
 
-            <a className="outline-link" href="/cv_jakubszczesniak-f.pdf" target="_blank" rel="noreferrer">OTWÓRZ CV <span><FontAwesomeIcon icon={SolidIcons.faArrowUpRightFromSquare} /></span></a>
+            <a className="outline-link" href="/cv-jakubszczesniak-f.pdf" target="_blank" rel="noreferrer">OTWÓRZ CV <span><FontAwesomeIcon icon={SolidIcons.faArrowUpRightFromSquare} /></span></a>
 
           </Reveal>
 
